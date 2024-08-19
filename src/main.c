@@ -1,4 +1,5 @@
 #include "main.h"
+#include <SDL2/SDL.h>
 
 /**
  * main - Entry point
@@ -7,6 +8,29 @@
  *          otherwise 1.
  */
 int main(void) {
-    printf("Hello, World!\n");
+    if (SDL_Init(SDL_INIT_VIDEO) != 0) {
+        fprintf(stderr, "failed to initialize SDL: %s\n", SDL_GetError());
+    }
+    const char *title = "FlapGenius";
+    SDL_Window *window = SDL_CreateWindow(title, SDL_WINDOWPOS_CENTERED,
+                                          SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH,
+                                          SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+    if (window == NULL) {
+        fprintf(stderr, "Failed to create winddow: %s\n", SDL_GetError());
+        SDL_Quit();
+        return (1);
+    }
+
+    SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    if (renderer == NULL) {
+        fprintf(stderr, "Failed to create renderer: %s\n", SDL_GetError());
+        SDL_DestroyWindow(window);
+        SDL_Quit();
+        return (1);
+    }
+
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
     return (0);
 }
