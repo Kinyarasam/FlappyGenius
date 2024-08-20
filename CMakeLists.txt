@@ -14,10 +14,24 @@ add_executable(FlapGenius ${SRC_FILES})
 
 find_package(SDL2 REQUIRED)
 
-# Include the header files
-include_directories(include ${SDL2_INCLUDE_DIRS})
+set(SDL2_TTF_INCLUDE_DIR "/usr/local/Cellar/sdl2_ttf/2.22.0/include/SDL2")
+set(SDL2_TTF_LIBRARY "/usr/local/Cellar/sdl2_ttf/2.22.0/lib/libSDL2_ttf.dylib")
 
-target_link_libraries(FlapGenius /usr/local/Cellar/sdl2/2.30.5/lib/libSDL2.dylib)
+include(FindPackageHandleStandardArgs)
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(SDL_TTF DEFAULT_MSG SDL2_TTF_LIBRARY SDL2_TTF_INCLUDE_DIR)
+
+if(SDL_TTF_FOUND)
+    set(SDL_TTF_LIBRARIES ${SDL2_TTF_LIBRARY})
+    set(SDL_TTF_INCLUDE_DIRS ${SDL2_TTF_INCLUDE_DIR})
+endif()
+
+include_directories(include ${SDL2_INCLUDE_DIRS} ${SDL_TTF_INCLUDE_DIRS})
+
+target_link_libraries(FlapGenius /usr/local/Cellar/sdl2/2.30.5/lib/libSDL2.dylib /usr/local/Cellar/sdl2_ttf/2.22.0/lib/libSDL2_ttf.dylib)
+
+add_custom_command(TARGET FlapGenius POST_BUILD
+                   COMMAND ${CMAKE_COMMAND} -E copy_directory
+                   ${CMAKE_SOURCE_DIR}/assets $<TARGET_FILE_DIR:FlapGenius>/assets)
 
 # Add the executable
 set_target_properties(FlapGenius PROPERTIES

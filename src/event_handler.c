@@ -1,3 +1,4 @@
+#include "main.h"
 #include "event_handler.h"
 
 bool handleEvents(SDL_Event *e, GameState *state) {
@@ -25,6 +26,12 @@ bool handleEvents(SDL_Event *e, GameState *state) {
                     } else if (state->currentState == STATE_PAUSED) {
                         state->currentState = STATE_PLAYING;
                     }
+                    break;
+                case SDLK_r:
+                    state->currentState = STATE_PLAYING;
+                    state->bird.y = SCREEN_HEIGHT / 2;
+                    state->bird.velocity = 0;
+                    initializeObstacles(state);
                     break;
                 default:
                     break;
