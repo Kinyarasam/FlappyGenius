@@ -89,6 +89,9 @@ int main(void) {
             }
 
             updateObstacles(&state);
+
+            if (checkCollision(&state)) state.currentState = STATE_GAME_OVER;
+
             drawObstacles(&state);
 
             SDL_Color birdColor = {255, 255, 255, 255};

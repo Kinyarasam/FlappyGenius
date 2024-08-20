@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
+#include <stdbool.h>
 
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 600
@@ -45,5 +46,6 @@ void drawRectangle(GameState *state, int x, int y, int w, int h, SDL_Color color
 void initializeObstacles(GameState *state);
 void updateObstacles(GameState *state);
 void drawObstacles(GameState *state);
+bool checkCollision(GameState *state);
 
 #endif /** __MAIN_H__ */
