@@ -1,5 +1,7 @@
 #include "main.h"
+#include "event_handler.h"
 #include <SDL2/SDL.h>
+#include <stdbool.h>
 
 /**
  * main - Entry point
@@ -27,6 +29,18 @@ int main(void) {
         SDL_DestroyWindow(window);
         SDL_Quit();
         return (1);
+    }
+
+    SDL_bool gameIsActive = SDL_TRUE;
+    SDL_Event *e;
+
+    while (gameIsActive) {
+        gameIsActive = handleEvents(*e);
+
+        SDL_SetRenderDrawColor(renderer, 135, 206, 250, 255);
+        SDL_RenderClear(renderer);
+
+        SDL_RenderPresent(renderer);
     }
 
     SDL_DestroyRenderer(renderer);
