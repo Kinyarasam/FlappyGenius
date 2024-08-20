@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/Users/kinyarasam/Code/Challenge/FlappyGenius/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/kinyarasam/Code/Challenge/FlappyGenius/include -I/Library/Frameworks/SDL2.framework/Headers -F/Library/Frameworks -I/usr/local/Cellar/sdl2_ttf/2.22.0/include/SDL2 -g -std=gnu99 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -o CMakeFiles/FlapGenius.dir/src/event_handler.c.o -c /Users/kinyarasam/Code/Challenge/FlappyGenius/src/event_handler.c",
+  "file": "/Users/kinyarasam/Code/Challenge/FlappyGenius/src/event_handler.c",
+  "output": "CMakeFiles/FlapGenius.dir/src/event_handler.c.o"
+},
+{
+  "directory": "/Users/kinyarasam/Code/Challenge/FlappyGenius/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/kinyarasam/Code/Challenge/FlappyGenius/include -I/Library/Frameworks/SDL2.framework/Headers -F/Library/Frameworks -I/usr/local/Cellar/sdl2_ttf/2.22.0/include/SDL2 -g -std=gnu99 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -o CMakeFiles/FlapGenius.dir/src/main.c.o -c /Users/kinyarasam/Code/Challenge/FlappyGenius/src/main.c",
+  "file": "/Users/kinyarasam/Code/Challenge/FlappyGenius/src/main.c",
+  "output": "CMakeFiles/FlapGenius.dir/src/main.c.o"
+},
+{
+  "directory": "/Users/kinyarasam/Code/Challenge/FlappyGenius/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/kinyarasam/Code/Challenge/FlappyGenius/include -I/Library/Frameworks/SDL2.framework/Headers -F/Library/Frameworks -I/usr/local/Cellar/sdl2_ttf/2.22.0/include/SDL2 -g -std=gnu99 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -o CMakeFiles/FlapGenius.dir/src/obstacle.c.o -c /Users/kinyarasam/Code/Challenge/FlappyGenius/src/obstacle.c",
+  "file": "/Users/kinyarasam/Code/Challenge/FlappyGenius/src/obstacle.c",
+  "output": "CMakeFiles/FlapGenius.dir/src/obstacle.c.o"
+},
+{
+  "directory": "/Users/kinyarasam/Code/Challenge/FlappyGenius/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/cc  -I/Users/kinyarasam/Code/Challenge/FlappyGenius/include -I/Library/Frameworks/SDL2.framework/Headers -F/Library/Frameworks -I/usr/local/Cellar/sdl2_ttf/2.22.0/include/SDL2 -g -std=gnu99 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk -mmacosx-version-min=12.7 -o CMakeFiles/FlapGenius.dir/src/utilities.c.o -c /Users/kinyarasam/Code/Challenge/FlappyGenius/src/utilities.c",
+  "file": "/Users/kinyarasam/Code/Challenge/FlappyGenius/src/utilities.c",
+  "output": "CMakeFiles/FlapGenius.dir/src/utilities.c.o"
+}
+]
