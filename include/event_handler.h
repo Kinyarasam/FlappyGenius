@@ -3,7 +3,10 @@
 
 #include <SDL2/SDL.h>
 #include <stdbool.h>
+#include "main.h"
 
-bool handleEvents(SDL_Event e);
+#define FLAP_STRENGTH -10
+
+bool handleEvents(SDL_Event *e, GameState *state);
 
 #endif /** __EVENT_HANDLER_H__ */

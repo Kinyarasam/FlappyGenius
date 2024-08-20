@@ -31,14 +31,40 @@ int main(void) {
         return (1);
     }
 
+    Bird bird = {SCREEN_WIDTH / 4, SCREEN_HEIGHT / 2, 0};
+    GameState state = { STATE_MENU,
+                        {SCREEN_WIDTH / 4, SCREEN_HEIGHT / 2, 0} };
+    printf("Bird and GameState initialized successfully.\n");
+
     SDL_bool gameIsActive = SDL_TRUE;
-    SDL_Event *e;
+    SDL_Event e;
 
     while (gameIsActive) {
-        gameIsActive = handleEvents(*e);
+        gameIsActive = handleEvents(&e, &state);
 
         SDL_SetRenderDrawColor(renderer, 135, 206, 250, 255);
         SDL_RenderClear(renderer);
+
+        if (state.currentState == STATE_PLAYING) {
+            state.bird.velocity += GRAVITY;
+            state.bird.y += state.bird.velocity;
+
+            SDL_Rect birdRect = { state.bird.x, state.bird.y, 50, 50 };
+            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+            SDL_RenderFillRect(renderer, &birdRect);
+        } else if (state.currentState == STATE_MENU) {
+            /**
+             * TODO: Add actual menu rendering.
+             */
+        } else if (state.currentState == STATE_PAUSED) {
+            /**
+             * TODO: Add actual paused screen rendering
+             */
+        } else if (state.currentState == STATE_GAME_OVER) {
+            /**
+             * TODO: Add actual game over screen rendering
+             */
+        }
 
         SDL_RenderPresent(renderer);
     }
